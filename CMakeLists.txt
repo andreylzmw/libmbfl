@@ -66,12 +66,34 @@ project(mbfl
 set(BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(OBJS_DIR "${BASE_DIR}/objs")
 
-add_custom_target(mbfl-includecopy ALL DEPENDS include/kphp/mbfl/mbfl/mbfilter.h)
+# add_custom_target(mbfl-includecopy ALL DEPENDS 
+# 	include/kphp/mbfl/mbfilter.h)
+# add_custom_command(
+#     OUTPUT  ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/mbfilter.h
+#     COMMAND mkdir -p ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/ && cp ${CMAKE_CURRENT_SOURCE_DIR}/mbfl/mbfilter.h ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/mbfilter.h
+#     DEPENDS mbfl/mbfilter.h
+# )
+
+add_custom_target(mbfl-includecopy ALL DEPENDS 
+	include/kphp/mbfl/mbfilter.h)
+
 add_custom_command(
-    OUTPUT  ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/mbfl/mbfilter.h
-    COMMAND mkdir -p ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/mbfl/ && cp ${CMAKE_CURRENT_SOURCE_DIR}/mbfl/mbfilter.h ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/mbfl/mbfilter.h
-    DEPENDS mbfl/mbfilter.h
-)
+        TARGET mbfl-includecopy POST_BUILD
+        COMMAND cp -R
+                ${CMAKE_SOURCE_DIR}/mbfl
+                ${CMAKE_SOURCE_DIR}/include/kphp/libmbfl)
+
+add_custom_command(
+        TARGET mbfl-includecopy POST_BUILD
+        COMMAND cp -R
+                ${CMAKE_SOURCE_DIR}/filters
+                ${CMAKE_SOURCE_DIR}/include/kphp/libmbfl)
+
+add_custom_command(
+        TARGET mbfl-includecopy POST_BUILD
+        COMMAND cp -R
+                ${CMAKE_SOURCE_DIR}/nls
+                ${CMAKE_SOURCE_DIR}/include/kphp/libmbfl)
 
 set(mbfl_ALL_SOURCES
     filters/mbfilter_iso2022_jp_ms.c
