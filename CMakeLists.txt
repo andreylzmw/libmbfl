@@ -80,20 +80,20 @@ add_custom_target(mbfl-includecopy ALL DEPENDS
 add_custom_command(
         TARGET mbfl-includecopy POST_BUILD
         COMMAND cp -R
-                ${CMAKE_SOURCE_DIR}/mbfl
-                ${CMAKE_SOURCE_DIR}/include/kphp/libmbfl)
+                ${CMAKE_CURRENT_SOURCE_DIR}/mbfl
+                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
 
 add_custom_command(
         TARGET mbfl-includecopy POST_BUILD
         COMMAND cp -R
-                ${CMAKE_SOURCE_DIR}/filters
-                ${CMAKE_SOURCE_DIR}/include/kphp/libmbfl)
+                ${CMAKE_CURRENT_SOURCE_DIR}/filters
+                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
 
 add_custom_command(
         TARGET mbfl-includecopy POST_BUILD
         COMMAND cp -R
-                ${CMAKE_SOURCE_DIR}/nls
-                ${CMAKE_SOURCE_DIR}/include/kphp/libmbfl)
+                ${CMAKE_CURRENT_SOURCE_DIR}/nls
+                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
 
 set(mbfl_ALL_SOURCES
     filters/mbfilter_iso2022_jp_ms.c
