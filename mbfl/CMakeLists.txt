@@ -4,7 +4,7 @@ if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/EastAsianWidth.txt")
 	message(STATUS "Downloading EastAsianWidth.txt")
 	file(DOWNLOAD "http://ftp.unicode.org/Public/UNIDATA/EastAsianWidth.txt" "${CMAKE_CURRENT_SOURCE_DIR}/EastAsianWidth.txt")
 endif()
-set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES "${CMAKE_CURRENT_SOURCE_DIR}/eaw_table.h")
+# set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES "${CMAKE_CURRENT_SOURCE_DIR}/eaw_table.h")
 
 execute_process(
 	COMMAND ${AWK_EXECUTABLE} -v TABLE_NAME=mbfl_eaw_table -f mk_eaw_tbl.awk EastAsianWidth.txt
