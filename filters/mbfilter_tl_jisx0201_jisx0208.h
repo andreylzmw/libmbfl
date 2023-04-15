@@ -25,7 +25,7 @@
 #ifndef MBFILTER_TL_KANA_JISX0201_JISX0208_H
 #define MBFILTER_TL_KANA_JISX0201_JISX0208_H
 
-#include "mbfl_convert.h"
+#include "../mbfl/mbfl_convert.h"
 
 #define MBFL_FILT_TL_HAN2ZEN_ALL       0x00000001
 #define MBFL_FILT_TL_HAN2ZEN_ALPHA     0x00000002

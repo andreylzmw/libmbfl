@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_CP1252_H
 #define MBFL_MBFILTER_CP1252_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_cp1252;
 extern const struct mbfl_identify_vtbl vtbl_identify_cp1252;

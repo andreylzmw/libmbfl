@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_UTF7IMAP_H
 #define MBFL_MBFILTER_UTF7IMAP_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_utf7imap;
 extern const struct mbfl_convert_vtbl vtbl_utf7imap_wchar;

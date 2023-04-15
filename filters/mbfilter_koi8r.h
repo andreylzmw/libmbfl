@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_KOI8R_H
 #define MBFL_MBFILTER_KOI8R_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_koi8r;
 extern const struct mbfl_identify_vtbl vtbl_identify_koi8r;

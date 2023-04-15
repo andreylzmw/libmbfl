@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_UCS2_H
 #define MBFL_MBFILTER_UCS2_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_ucs2;
 extern const mbfl_encoding mbfl_encoding_ucs2be;

@@ -1,7 +1,7 @@
 #ifndef MBFL_NLS_NEUTRAL_H
 #define MBFL_NLS_NEUTRAL_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_language mbfl_language_neutral;
 

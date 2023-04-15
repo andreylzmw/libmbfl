@@ -25,7 +25,7 @@
 #ifndef MBFL_MBFILTER_ARMSCII8_H
 #define MBFL_MBFILTER_ARMSCII8_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_armscii8;
 extern const struct mbfl_identify_vtbl vtbl_identify_armscii8;

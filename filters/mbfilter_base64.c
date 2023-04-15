@@ -32,7 +32,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_base64.h"
 
 const mbfl_encoding mbfl_encoding_base64 = {

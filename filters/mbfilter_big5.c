@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_big5.h"
 
 #include "unicode_table_big5.h"

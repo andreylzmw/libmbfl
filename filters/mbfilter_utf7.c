@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_utf7.h"
 
 static int mbfl_filt_ident_utf7(int c, mbfl_identify_filter *filter);

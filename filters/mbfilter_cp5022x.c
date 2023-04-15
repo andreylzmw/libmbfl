@@ -26,7 +26,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_cp5022x.h"
 #include "mbfilter_jis.h"
 #include "mbfilter_tl_jisx0201_jisx0208.h"

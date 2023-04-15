@@ -31,7 +31,7 @@
 #ifndef MBFL_MBFILTER_BYTE2_H
 #define MBFL_MBFILTER_BYTE2_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_byte2be;
 extern const mbfl_encoding mbfl_encoding_byte2le;

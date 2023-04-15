@@ -27,7 +27,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_cp850.h"
 #include "unicode_table_cp850.h"
 

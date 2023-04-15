@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_EUC_TW_H
 #define MBFL_MBFILTER_EUC_TW_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_euc_tw;
 extern const struct mbfl_identify_vtbl vtbl_identify_euctw; 

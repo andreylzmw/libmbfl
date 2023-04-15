@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_iso2022jp_mobile.h"
 #include "mbfilter_sjis_mobile.h"
 

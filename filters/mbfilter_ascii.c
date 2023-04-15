@@ -32,7 +32,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_ascii.h"
 
 static int mbfl_filt_ident_ascii(int c, mbfl_identify_filter *filter);

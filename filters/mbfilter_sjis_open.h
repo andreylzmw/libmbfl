@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_SJIS_OPEN_H
 #define MBFL_MBFILTER_SJIS_OPEN_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_sjis_open;
 

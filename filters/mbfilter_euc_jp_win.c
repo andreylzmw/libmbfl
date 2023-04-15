@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_euc_jp_win.h"
 
 #include "unicode_table_cp932_ext.h"

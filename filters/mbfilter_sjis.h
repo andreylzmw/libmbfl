@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_SJIS_H
 #define MBFL_MBFILTER_SJIS_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_sjis;
 extern const struct mbfl_identify_vtbl vtbl_identify_sjis;

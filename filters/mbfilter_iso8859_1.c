@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_iso8859_1.h"
 
 static const char *mbfl_encoding_8859_1_aliases[] = {"ISO_8859-1", "latin1", NULL};

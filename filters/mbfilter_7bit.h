@@ -31,7 +31,7 @@
 #ifndef MBFL_MBFILTER_7BIT_H
 #define MBFL_MBFILTER_7BIT_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_7bit;
 extern const struct mbfl_convert_vtbl vtbl_8bit_7bit;

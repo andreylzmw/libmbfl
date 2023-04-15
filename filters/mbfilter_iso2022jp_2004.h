@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_2022JP_2004_H
 #define MBFL_MBFILTER_2022JP_2004_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_2022jp_2004;
 extern const struct mbfl_identify_vtbl vtbl_identify_2022jp_2004;

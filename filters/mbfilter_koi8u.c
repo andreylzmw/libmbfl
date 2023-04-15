@@ -28,7 +28,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_koi8u.h"
 #include "unicode_table_koi8u.h"
 

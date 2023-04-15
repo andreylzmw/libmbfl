@@ -32,7 +32,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_sjis_mobile.h"
 
 #include "unicode_table_cp932_ext.h"

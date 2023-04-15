@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "html_entities.h"
 
 const mbfl_html_entity_entry mbfl_html_entity_list[] = {

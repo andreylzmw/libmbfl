@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_uhc.h"
 #define UNICODE_TABLE_UHC_DEF
 #include "unicode_table_uhc.h"

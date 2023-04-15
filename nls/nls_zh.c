@@ -6,7 +6,7 @@
 #include <stddef.h>
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "nls_zh.h"
 
 const mbfl_language mbfl_language_simplified_chinese = {

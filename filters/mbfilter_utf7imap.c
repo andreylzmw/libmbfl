@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_utf7imap.h"
 
 const mbfl_encoding mbfl_encoding_utf7imap = {

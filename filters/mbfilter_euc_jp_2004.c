@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_euc_jp_2004.h"
 #include "mbfilter_sjis_2004.h"
 

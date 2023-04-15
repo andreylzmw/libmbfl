@@ -51,17 +51,17 @@
 #include "mbfl_encoding.h"
 #include "mbfl_language.h"
 
-#include "nls/nls_ja.h"
-#include "nls/nls_kr.h"
-#include "nls/nls_zh.h"
-#include "nls/nls_uni.h"
-#include "nls/nls_de.h"
-#include "nls/nls_ru.h"
-#include "nls/nls_ua.h"
-#include "nls/nls_en.h"
-#include "nls/nls_hy.h"
-#include "nls/nls_tr.h"
-#include "nls/nls_neutral.h"
+#include "../nls/nls_ja.h"
+#include "../nls/nls_kr.h"
+#include "../nls/nls_zh.h"
+#include "../nls/nls_uni.h"
+#include "../nls/nls_de.h"
+#include "../nls/nls_ru.h"
+#include "../nls/nls_ua.h"
+#include "../nls/nls_en.h"
+#include "../nls/nls_hy.h"
+#include "../nls/nls_tr.h"
+#include "../nls/nls_neutral.h"
 
 #ifndef HAVE_STRCASECMP
 #ifdef HAVE_STRICMP

@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_utf16.h"
 
 static const char *mbfl_encoding_utf16_aliases[] = {"utf16", NULL};

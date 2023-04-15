@@ -102,7 +102,7 @@
 #include "mbfilter.h"
 #include "mbfl_filter_output.h"
 #include "mbfilter_pass.h"
-#include "filters/mbfilter_tl_jisx0201_jisx0208.h"
+#include "../filters/mbfilter_tl_jisx0201_jisx0208.h"
 
 #include "eaw_table.h"
 

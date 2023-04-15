@@ -31,7 +31,7 @@
 #include "config.h"
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_cp936.h"
 #define UNICODE_TABLE_CP936_DEF
 #include "unicode_table_cp936.h"

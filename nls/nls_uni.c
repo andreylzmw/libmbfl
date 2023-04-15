@@ -6,7 +6,7 @@
 #include <stddef.h>
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "nls_uni.h"
 
 static const char *mbfl_language_uni_aliases[] = {"universal", NULL};

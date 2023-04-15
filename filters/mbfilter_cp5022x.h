@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_CP50221_h
 #define MBFL_MBFILTER_CP50221_h
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_jis_ms;
 extern const mbfl_encoding mbfl_encoding_cp50220;

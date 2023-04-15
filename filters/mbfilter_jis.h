@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_JIS_H
 #define MBFL_MBFILTER_JIS_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_jis;
 extern const mbfl_encoding mbfl_encoding_2022jp;

@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_HTMLENT_H
 #define MBFL_MBFILTER_HTMLENT_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_html_ent;
 extern const struct mbfl_convert_vtbl vtbl_wchar_html; 

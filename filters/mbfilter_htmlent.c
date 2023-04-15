@@ -39,7 +39,7 @@
 #include <strings.h>
 #endif
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 #include "mbfilter_htmlent.h"
 #include "html_entities.h"
 

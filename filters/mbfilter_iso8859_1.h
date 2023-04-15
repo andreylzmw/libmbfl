@@ -30,7 +30,7 @@
 #ifndef MBFL_MBFILTER_ISO8859_1_H
 #define MBFL_MBFILTER_ISO8859_1_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_8859_1;
 extern const struct mbfl_identify_vtbl vtbl_identify_8859_1;

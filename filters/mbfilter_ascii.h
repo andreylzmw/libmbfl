@@ -31,7 +31,7 @@
 #ifndef MBFL_MBFILTER_ASCII_H
 #define MBFL_MBFILTER_ASCII_H
 
-#include "mbfilter.h"
+#include "../mbfl/mbfilter.h"
 
 extern const mbfl_encoding mbfl_encoding_ascii;
 extern const struct mbfl_identify_vtbl vtbl_identify_ascii;
