@@ -183,6 +183,15 @@ const struct mbfl_convert_vtbl vtbl_wchar_utf8_sb = {
 };
 
 #define CK(statement)	do { if ((statement) < 0) return (-1); } while (0)
+int mbfl_filt_put_invalid_char(int c, mbfl_convert_filter *filter)
+{
+	int w;
+	w = c & MBFL_WCSGROUP_MASK;
+	w |= MBFL_WCSGROUP_THROUGH;
+	filter->status = 0;
+	filter->cache = 0;
+	CK((*filter->output_function)(w, filter->data));
+}
 
 /*
  * UTF-8 => wchar
