@@ -65,6 +65,7 @@ project(libmbfl
 
 set(BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(OBJS_DIR "${BASE_DIR}/objs")
+SET(CMAKE_OSX_DEPLOYMENT_TARGET 11.0)
 
 # add_custom_target(libmbfl-includecopy ALL DEPENDS 
 # 	include/kphp/libmbfl/mbfilter.h)
