@@ -1,10 +1,10 @@
 # cmake_minimum_required(VERSION 2.6)
-# project(mbfl C CXX)
+# project(libmbfl C CXX)
 
 # include(CheckIncludeFiles)
 # include(CheckFunctionExists)
 
-# MACRO(MBFL_CHECK_INCLUDE include_file)
+# MACRO(libmbfl_CHECK_INCLUDE include_file)
 # 	string(REGEX REPLACE "[]"
 # 	         "_" _include_var ${include_file})
 # 	string(TOUPPER "HAVE_${_include_var}" _include_var)
@@ -15,13 +15,13 @@
 # 	ENDIF()
 # ENDMACRO()
 
-# MBFL_CHECK_INCLUDE("stdio.h")
-# MBFL_CHECK_INCLUDE("stdlib.h")
-# MBFL_CHECK_INCLUDE("stddef.h")
-# MBFL_CHECK_INCLUDE("assert.h")
-# MBFL_CHECK_INCLUDE("memory.h")
-# MBFL_CHECK_INCLUDE("strings.h")
-# MBFL_CHECK_INCLUDE("string.h")
+# libmbfl_CHECK_INCLUDE("stdio.h")
+# libmbfl_CHECK_INCLUDE("stdlib.h")
+# libmbfl_CHECK_INCLUDE("stddef.h")
+# libmbfl_CHECK_INCLUDE("assert.h")
+# libmbfl_CHECK_INCLUDE("memory.h")
+# libmbfl_CHECK_INCLUDE("strings.h")
+# libmbfl_CHECK_INCLUDE("string.h")
 
 
 # CHECK_FUNCTION_EXISTS("strcasecmp" HAVE_STRCASECMP)
@@ -32,13 +32,13 @@
 # add_definitions(-DHAVE_CONFIG_H=1)
 
 # include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/mbfl)
+# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libmbfl)
 # include_directories(${CMAKE_CURRENT_SOURCE_DIR}/nls)
 # include_directories(${CMAKE_CURRENT_SOURCE_DIR}/filters)
 
 # add_subdirectory(nls)
 # add_subdirectory(filters)
-# add_subdirectory(mbfl)
+# add_subdirectory(libmbfl)
 
 cmake_minimum_required(VERSION 3.14..3.18)
 
@@ -53,49 +53,49 @@ cmake_minimum_required(VERSION 3.14..3.18)
 # Install with cpack (generates deb package):
 #
 #   cpack
-#   sudo dpkg -i mbfl_*.deb
+#   sudo dpkg -i libmbfl_*.deb
 
 # Included for CMAKE_INSTALL_PREFIX and other variables.
 include(GNUInstallDirs)
 
-project(mbfl
+project(libmbfl
         VERSION 1.0.0
-        DESCRIPTION "mbfl"
-        HOMEPAGE_URL "https://github.com/andreylzmw/mbfl")
+        DESCRIPTION "libmbfl"
+        HOMEPAGE_URL "https://github.com/andreylzmw/libmbfl")
 
 set(BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(OBJS_DIR "${BASE_DIR}/objs")
 
-# add_custom_target(mbfl-includecopy ALL DEPENDS 
-# 	include/kphp/mbfl/mbfilter.h)
+# add_custom_target(libmbfl-includecopy ALL DEPENDS 
+# 	include/kphp/libmbfl/mbfilter.h)
 # add_custom_command(
-#     OUTPUT  ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/mbfilter.h
-#     COMMAND mkdir -p ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/ && cp ${CMAKE_CURRENT_SOURCE_DIR}/mbfl/mbfilter.h ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/mbfl/mbfilter.h
-#     DEPENDS mbfl/mbfilter.h
+#     OUTPUT  ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl/mbfilter.h
+#     COMMAND mkdir -p ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl/ && cp ${CMAKE_CURRENT_SOURCE_DIR}/libmbfl/mbfilter.h ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl/mbfilter.h
+#     DEPENDS libmbfl/mbfilter.h
 # )
 
-add_custom_target(mbfl-includecopy ALL DEPENDS 
-	include/kphp/mbfl/mbfilter.h)
+add_custom_target(libmbfl-includecopy ALL DEPENDS 
+	include/kphp/libmbfl/mbfl/mbfilter.h)
 
 add_custom_command(
-        TARGET mbfl-includecopy POST_BUILD
+        TARGET libmbfl-includecopy POST_BUILD
         COMMAND cp -R
                 ${CMAKE_CURRENT_SOURCE_DIR}/mbfl
                 ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
 
 add_custom_command(
-        TARGET mbfl-includecopy POST_BUILD
+        TARGET libmbfl-includecopy POST_BUILD
         COMMAND cp -R
                 ${CMAKE_CURRENT_SOURCE_DIR}/filters
                 ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
 
 add_custom_command(
-        TARGET mbfl-includecopy POST_BUILD
+        TARGET libmbfl-includecopy POST_BUILD
         COMMAND cp -R
                 ${CMAKE_CURRENT_SOURCE_DIR}/nls
                 ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
 
-set(mbfl_ALL_SOURCES
+set(libmbfl_ALL_SOURCES
     filters/mbfilter_iso2022_jp_ms.c
 	filters/mbfilter_iso8859_14.c
 	filters/mbfilter_iso8859_6.c
@@ -184,38 +184,38 @@ set(mbfl_ALL_SOURCES
 	mbfl/mbfl_language.c
 	mbfl/mbfl_memory_device.c)
 
-add_library(mbfl STATIC ${mbfl_ALL_SOURCES})
-add_library(vk::mbfl ALIAS mbfl)
+add_library(libmbfl STATIC ${libmbfl_ALL_SOURCES})
+add_library(vk::libmbfl ALIAS libmbfl)
 
-target_compile_options(mbfl PRIVATE
+target_compile_options(libmbfl PRIVATE
     -std=gnu11
     -O3
     -Wno-unused-parameter -Wno-logical-op-parentheses -Wno-unused-variable -Wno-return-type -Wno-incompatible-pointer-types
     -DHAVE_STRING_H -DHAVE_STDLIB_H
 )
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-  target_compile_options(mbfl PRIVATE -Wmaybe-uninitialized)
+  target_compile_options(libmbfl PRIVATE -Wmaybe-uninitialized)
   if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "7.0.0")
     message("GCC >= 7, adding extra compile options")
-    target_compile_options(mbfl PRIVATE -Wno-implicit-fallthrough)
+    target_compile_options(libmbfl PRIVATE -Wno-implicit-fallthrough)
   endif()
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  target_compile_options(mbfl PRIVATE -Wuninitialized)
+  target_compile_options(libmbfl PRIVATE -Wuninitialized)
 endif()
 
-set_target_properties(mbfl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${OBJS_DIR})
+set_target_properties(libmbfl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${OBJS_DIR})
 
-target_link_libraries(mbfl m)
+target_link_libraries(libmbfl m)
 
-set_target_properties(mbfl PROPERTIES PUBLIC_HEADER "mbfl/mbfilter.h")
+set_target_properties(libmbfl PROPERTIES PUBLIC_HEADER "libmbfl/mbfilter.h")
 
-add_dependencies(mbfl mbfl-includecopy)
+add_dependencies(libmbfl libmbfl-includecopy)
 
-install(TARGETS mbfl
+install(TARGETS libmbfl
         COMPONENT KPHP
         LIBRARY DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}"
         ARCHIVE DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}"
-        PUBLIC_HEADER DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/kphp/libmbfl")
+        PUBLIC_HEADER DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/kphp/liblibmbfl")
 
 set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
 set(CPACK_DEB_COMPONENT_INSTALL ON)
