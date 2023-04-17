@@ -194,6 +194,10 @@ target_compile_options(libmbfl PRIVATE
     -Wno-unused-parameter -Wno-unused-variable -Wno-return-type -Wno-incompatible-pointer-types -Wno-unused-function
     -DHAVE_STRING_H -DHAVE_STDLIB_H
 )
+if (APPLE)
+	target_compile_options(libmbfl PRIVATE -Wno-logical-op-parentheses)
+endif()
+
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   target_compile_options(libmbfl PRIVATE -Wmaybe-uninitialized -Wno-parentheses)
   if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "7.0.0")
@@ -201,7 +205,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_compile_options(libmbfl PRIVATE -Wno-implicit-fallthrough)
   endif()
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  target_compile_options(libmbfl PRIVATE -Wuninitialized -Wno-logical-op-parentheses)
+  target_compile_options(libmbfl PRIVATE -Wuninitialized)
 endif()
 
 set_target_properties(libmbfl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${OBJS_DIR})
