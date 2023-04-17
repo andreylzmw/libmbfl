@@ -191,7 +191,7 @@ add_library(vk::libmbfl ALIAS libmbfl)
 target_compile_options(libmbfl PRIVATE
     -std=gnu11
     -O3
-    -Wno-unused-parameter -Wno-unused-variable -Wno-return-type -Wno-incompatible-pointer-types
+    -Wno-unused-parameter -Wno-unused-variable -Wno-return-type -Wno-incompatible-pointer-types -Wno-unused-function
     -DHAVE_STRING_H -DHAVE_STDLIB_H
 )
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
