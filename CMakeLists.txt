@@ -1,45 +1,3 @@
-# cmake_minimum_required(VERSION 2.6)
-# project(libmbfl C CXX)
-
-# include(CheckIncludeFiles)
-# include(CheckFunctionExists)
-
-# MACRO(libmbfl_CHECK_INCLUDE include_file)
-# 	string(REGEX REPLACE "[]"
-# 	         "_" _include_var ${include_file})
-# 	string(TOUPPER "HAVE_${_include_var}" _include_var)
-
-# 	CHECK_INCLUDE_FILES("${include_file}" ${_include_var})
-# 	IF(NOT ${_include_var})
-# 		message(STATUS "Checking for ${include_file} - failed")
-# 	ENDIF()
-# ENDMACRO()
-
-# libmbfl_CHECK_INCLUDE("stdio.h")
-# libmbfl_CHECK_INCLUDE("stdlib.h")
-# libmbfl_CHECK_INCLUDE("stddef.h")
-# libmbfl_CHECK_INCLUDE("assert.h")
-# libmbfl_CHECK_INCLUDE("memory.h")
-# libmbfl_CHECK_INCLUDE("strings.h")
-# libmbfl_CHECK_INCLUDE("string.h")
-
-
-# CHECK_FUNCTION_EXISTS("strcasecmp" HAVE_STRCASECMP)
-# CHECK_FUNCTION_EXISTS("strchr" HAVE_STRCHR)
-
-# configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_SOURCE_DIR}/config.h)
-
-# add_definitions(-DHAVE_CONFIG_H=1)
-
-# include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libmbfl)
-# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/nls)
-# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/filters)
-
-# add_subdirectory(nls)
-# add_subdirectory(filters)
-# add_subdirectory(libmbfl)
-
 cmake_minimum_required(VERSION 3.14..3.18)
 
 # Build:
@@ -65,7 +23,7 @@ project(libmbfl
 
 set(BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(OBJS_DIR "${BASE_DIR}/objs")
-SET(CMAKE_OSX_DEPLOYMENT_TARGET 11.0)
+set(CMAKE_OSX_DEPLOYMENT_TARGET 11.0)
 
 # add_custom_target(libmbfl-includecopy ALL DEPENDS 
 # 	include/kphp/libmbfl/mbfilter.h)
@@ -75,26 +33,28 @@ SET(CMAKE_OSX_DEPLOYMENT_TARGET 11.0)
 #     DEPENDS libmbfl/mbfilter.h
 # )
 
-add_custom_target(libmbfl-includecopy ALL DEPENDS 
-	include/kphp/libmbfl/mbfl/mbfilter.h)
+# add_custom_target(libmbfl-includecopy ALL)
 
 add_custom_command(
-        TARGET libmbfl-includecopy POST_BUILD
         COMMAND cp -R
                 ${CMAKE_CURRENT_SOURCE_DIR}/mbfl
-                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
+                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl
+        OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl/mbfl)
 
 add_custom_command(
-        TARGET libmbfl-includecopy POST_BUILD
         COMMAND cp -R
                 ${CMAKE_CURRENT_SOURCE_DIR}/filters
-                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
+                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl
+        OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl/filters)
 
 add_custom_command(
-        TARGET libmbfl-includecopy POST_BUILD
         COMMAND cp -R
                 ${CMAKE_CURRENT_SOURCE_DIR}/nls
-                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl)
+                ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl
+        OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/include/kphp/libmbfl/nls)
+
+add_custom_target(libmbfl-includecopy ALL DEPENDS 
+	include/kphp/libmbfl/mbfl/mbfilter.h)
 
 set(libmbfl_ALL_SOURCES
     filters/mbfilter_iso2022_jp_ms.c
